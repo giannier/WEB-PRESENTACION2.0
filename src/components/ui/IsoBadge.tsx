@@ -33,7 +33,7 @@ export function IsoBadge() {
   if (badge === undefined) return null;
 
   return (
-    <div className="pointer-events-none absolute left-[6%] top-[clamp(3.5rem,7%,4.5rem)] size-[clamp(4.5rem,8vw,7.5rem)] [perspective:800px] sm:left-[7%]">
+    <div className="pointer-events-none absolute left-[6%] top-[clamp(3.5rem,7%,4.5rem)] size-[clamp(5.25rem,9.5vw,8.75rem)] [perspective:800px] sm:left-[7%]">
       <div className="iso-badge-float h-full w-full">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
