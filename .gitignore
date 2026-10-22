@@ -6,8 +6,10 @@
 
 # next.js
 /.next/
-/out/
 next-env.d.ts
+
+# out/ is committed on purpose in this fork: the cPanel host has no Node to build it,
+# so .cpanel.yml just copies this pre-built folder into the document root on deploy.
 
 # production
 /build
