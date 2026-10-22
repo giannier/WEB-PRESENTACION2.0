@@ -11,6 +11,36 @@ next-env.d.ts
 # out/ is committed on purpose in this fork: the cPanel host has no Node to build it,
 # so .cpanel.yml just copies this pre-built folder into the document root on deploy.
 
+# cPanel's document root IS this repository, so every deploy drops the contents of
+# out/ next to the source. Those copies are untracked files, which makes cPanel's
+# "Deploy HEAD Commit" refuse to run ("no uncommitted changes exist" check). Ignoring
+# them keeps the checked-out branch clean, so deploy stays enabled after a deploy.
+/index.html
+/index.txt
+/404.html
+/_next/
+/isos/
+/logos/
+# Windows and macOS match ignore patterns case-insensitively, so the rule above also
+# hides the tracked source folder LOGOS/. Re-include it: on Linux (`core.ignorecase`
+# false) this line matches nothing, so the deployed /logos/ stays ignored on the host.
+!/LOGOS/
+/portadas/
+/portafolio/
+/redes/
+/texturas/
+
+# Files the host itself writes into the document root (AutoSSL, cPanel, Apache).
+/.well-known/
+/.htaccess
+/.htpasswd
+/.user.ini
+/cgi-bin/
+/.trash*
+/error_log
+/.ftpquota
+/.quota
+
 # production
 /build
 
